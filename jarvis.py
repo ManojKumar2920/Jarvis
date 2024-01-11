@@ -115,7 +115,7 @@ if __name__ == "__main__":
             speak("Sorry sir, how can i help you to made the day better?")
         
         elif 'date' in command_text or 'time' in command_text:
-            date_time(command_text)
+            date_time()
 
         elif 'search' in command_text:
             search(command_text)
