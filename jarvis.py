@@ -6,6 +6,7 @@ import datetime
 import time
 import spotipy 
 from spotipy.oauth2 import SpotifyOAuth
+import google.generativeai as genai
 
 engine = tts.init()
 voices = engine.getProperty('voices')
@@ -19,6 +20,11 @@ sp = spotipy.Spotify(auth_manager=SpotifyOAuth(client_id=SPOTIPY_CLIENT_ID,
                                                client_secret=SPOTIPY_CLIENT_SECRET,
                                                redirect_uri=SPOTIPY_REDIRECT_URI,
                                                scope="user-library-read user-read-playback-state user-modify-playback-state"))
+
+GOOGLE_API_KEY= 'AIzaSyB81G9Y3B7RwFMPXXzA1Adpcr7NJLtVXi8'
+genai.configure(api_key=GOOGLE_API_KEY)
+
+model = genai.GenerativeModel('gemini-pro')
 
 def speak(audio):
     engine.say(audio)
@@ -68,7 +74,22 @@ def play_song(command):
             speak(f"Now playing {results['tracks']['items'][0]['name']} by {results['tracks']['items'][0]['artists'][0]['name']}.")
         else:
             speak("No active devices found!")
-        
+
+
+def speak_lines(text, num_lines=3):
+    lines = text.split('\n')[:num_lines]
+    final_text = ' '.join(lines)
+    engine.say(final_text)
+    engine.runAndWait()       
+
+def geminiai(command):
+    print('Please wait sir..!')
+    speak('Please wait sir..!')
+    response = model.generate_content(command)
+    response_text = response.text
+    print(response_text)
+    speak_lines(response_text)
+
 
 def command():
     r = sr.Recognizer()
@@ -127,3 +148,6 @@ if __name__ == "__main__":
             speak('GoodBye Sir!')
             print('GoodBye Sir!')
             exit()
+        
+        else:
+            geminiai(command_text)
