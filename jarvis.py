@@ -12,8 +12,8 @@ engine = tts.init()
 voices = engine.getProperty('voices')
 engine.setProperty('voice', voices[0].id)
 
-SPOTIPY_CLIENT_ID = '8c8becb9af7d45609ec35fb51215e2ae'
-SPOTIPY_CLIENT_SECRET = '833650a4204848d4a395865e74d49a19'
+SPOTIPY_CLIENT_ID = 'your-client-id'
+SPOTIPY_CLIENT_SECRET = 'your-client-secret'
 SPOTIPY_REDIRECT_URI = 'http://localhost:3000'
 
 sp = spotipy.Spotify(auth_manager=SpotifyOAuth(client_id=SPOTIPY_CLIENT_ID,
@@ -21,7 +21,7 @@ sp = spotipy.Spotify(auth_manager=SpotifyOAuth(client_id=SPOTIPY_CLIENT_ID,
                                                redirect_uri=SPOTIPY_REDIRECT_URI,
                                                scope="user-library-read user-read-playback-state user-modify-playback-state"))
 
-GOOGLE_API_KEY= 'AIzaSyB81G9Y3B7RwFMPXXzA1Adpcr7NJLtVXi8'
+GOOGLE_API_KEY= 'your-api-key'
 genai.configure(api_key=GOOGLE_API_KEY)
 
 model = genai.GenerativeModel('gemini-pro')
