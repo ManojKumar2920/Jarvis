@@ -8,8 +8,10 @@ It's a Python-based voice-activated assistant, featuring speech recognition and 
 - [About](#about)
 - [Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
+  - [Modules Used](#modules-used)
   - [Installation](#installation)
 - [Key Features](#key-features)
+- [Further Plans](#further-plans)
 - [Contributing](#contributing)
 - [License](#license)
 
@@ -32,6 +34,14 @@ Before you begin, ensure that you have the following prerequisites installed on 
 - [pip](https://pip.pypa.io/en/stable/installation/): Jarvis uses pip for package management in Python. If you don't have it installed, follow the instructions on the official pip website.
 
 - [git](https://git-scm.com/): If you don't have git installed, you can download it from the official Git website.
+
+## Modules Used
+These are the major and important modules used in this project.
+
+1. Py Text to Speech
+2. Speech recognition
+3. Spotipy
+4. Google generativeai
 
 ## Installation
 
@@ -82,13 +92,10 @@ While Jarvis is currently a basic virtual assistant with fundamental features, t
 2. **Customizable Responses:**
    - Allowing users to customize Jarvis's responses and interactions based on their preferences.
 
-3. **Enhanced Spotify Integration:**
-   - Providing more advanced features for controlling Spotify playback and accessing user playlists.
-
-4. **User Feedback Mechanism:**
+3. **User Feedback Mechanism:**
    - Implementing a feedback system to gather user input and improve Jarvis based on user suggestions.
 
-5. **Improved Error Handling:**
+4. **Improved Error Handling:**
    - Enhancing error handling to provide more informative responses in case of issues or misunderstandings.
 
 ## Contributing
