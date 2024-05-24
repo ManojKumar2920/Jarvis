@@ -1,3 +1,5 @@
+<img src="https://socialify.git.ci/ManojKumar2920/Jarvis/image?description=1&descriptionEditable=Jarvis%2C%20A%20Python-based%20voice-activated%20assistant.&forks=1&issues=1&name=1&owner=1&stargazers=1&theme=Light" alt="Jarvis"/>
+
 # Jarvis Virtual Assistant
 
 It's a Python-based voice-activated assistant, featuring speech recognition and integration with Spotify for tasks like fetching date/time, web searches, and playing music.
